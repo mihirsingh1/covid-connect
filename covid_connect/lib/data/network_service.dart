@@ -1,8 +1,6 @@
 import 'dart:convert';
 
 import 'package:covid_connect/constants/strings.dart';
-import 'package:covid_connect/data/models/covid_item.dart';
-import 'package:covid_connect/data/models/item_request_response.dart';
 import 'package:covid_connect/data/models/login_response.dart';
 import 'package:http/http.dart';
 
