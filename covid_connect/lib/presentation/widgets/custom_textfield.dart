@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextField extends StatefulWidget {
   final TextEditingController controller;
@@ -36,7 +37,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             });
           },
           autofocus: widget.autoFocus,
-          style: TextStyle(fontSize: 14.0),
+          style: GoogleFonts.quicksand(fontSize: 14.0),
           keyboardType: widget.inputType,
           decoration: InputDecoration(
             filled: true,

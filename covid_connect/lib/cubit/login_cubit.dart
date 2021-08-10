@@ -14,4 +14,14 @@ class LoginCubit extends Cubit<LoginState> {
     final loginResponse = await repository.login(username, password);
     emit(LoginResult(loginResponse));
   }
+
+  Future<bool> logout() async {
+    repository.allItems = [];
+    repository.covidItems = [];
+    return await repository.localStorage.logoutUser();
+  }
+
+  String getUsername() {
+    return repository.localStorage.getUsername();
+  }
 }

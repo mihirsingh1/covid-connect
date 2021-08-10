@@ -6,9 +6,10 @@ class LocalStorage {
 
   LocalStorage(this.prefs);
 
-  void storeToken(String sessionToken) async {
+  void storeUser(String sessionToken, String username) async {
     try {
       await prefs.setString(authTokenKey, sessionToken);
+      await prefs.setString(usernameKey, username);
     } catch (err) {
       print(err);
     }
@@ -18,7 +19,22 @@ class LocalStorage {
     return prefs.getString(authTokenKey) ?? "";
   }
 
+  String getUsername() {
+    return prefs.getString(usernameKey) ?? "";
+  }
+
   bool isUserLoggedIn() {
     return getToken() != "";
+  }
+
+  Future<bool> logoutUser() async {
+    try {
+      await prefs.setString(authTokenKey, "");
+      await prefs.setString(usernameKey, "");
+
+      return true;
+    } catch (err) {
+      return false;
+    }
   }
 }

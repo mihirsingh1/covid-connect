@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken")
 
@@ -13,7 +13,8 @@ Router.post("/login", async (req, res) => {
     
     res.status(201).send({
       isLoginSuccess: isPasswordCorrect,
-      token
+      token,
+      username: req.body.username
     });
 
   } catch (err) {
@@ -29,12 +30,13 @@ Router.post("/signup", async (req, res) => {
   const salt = await bcryptjs.genSalt(10);
   const encryptedPass = await bcryptjs.hash(req.body.password, salt);
 
-  const user = new User({
-    username: req.body.username,
-    password: encryptedPass
-  });
-
   try {
+
+    const user = new User({
+      username: req.body.username,
+      password: encryptedPass
+    });  
+
     await user.save();
     const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN)
     res.status(201).send({
