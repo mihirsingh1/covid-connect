@@ -8,9 +8,8 @@ This project is built with Flutter, NodeJS and MongoDB. The testing machines wil
 
 The server can be started by running:
 ```
-npm start
+npm start // In the folder where the main.js file is located
 ```
-in the folder where the main.js file is located
 
 
 To start the app the following steps need to be followed:
