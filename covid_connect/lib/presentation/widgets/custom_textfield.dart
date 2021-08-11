@@ -6,9 +6,12 @@ class CustomTextField extends StatefulWidget {
   final String hint;
   final TextInputType inputType;
   final bool autoFocus;
+  final bool isPassword;
 
   const CustomTextField(this.hint, this.controller,
-      {this.inputType = TextInputType.text, this.autoFocus = false});
+      {this.inputType = TextInputType.text,
+      this.autoFocus = false,
+      this.isPassword = false});
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -30,6 +33,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       child: Material(
         borderRadius: BorderRadius.circular(10.0),
         child: TextField(
+          obscureText: widget.isPassword,
           controller: widget.controller,
           onChanged: (v) {
             setState(() {

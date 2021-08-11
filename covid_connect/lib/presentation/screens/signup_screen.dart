@@ -37,7 +37,7 @@ class SignupScreen extends StatelessWidget {
               Navigator.pushNamedAndRemoveUntil(
                   context, homeRoute, (route) => false);
             } else {
-              showErrorToast("Couldn't log you in, check credentials");
+              showErrorToast("Couldn't sign you up, try a different username");
             }
           }
         },
@@ -80,11 +80,19 @@ class SignupBody extends StatelessWidget {
             inputType: TextInputType.text,
           ),
           SizedBox(height: 10.0),
-          CustomTextField("Password", _passwordController,
-              inputType: TextInputType.text),
+          CustomTextField(
+            "Password",
+            _passwordController,
+            inputType: TextInputType.text,
+            isPassword: true,
+          ),
           SizedBox(height: 10.0),
-          CustomTextField("Confirm Password", _confirmPassController,
-              inputType: TextInputType.text),
+          CustomTextField(
+            "Confirm Password",
+            _confirmPassController,
+            inputType: TextInputType.text,
+            isPassword: true,
+          ),
           InkWell(
             onTap: () {
               var username = _usernameController.text;

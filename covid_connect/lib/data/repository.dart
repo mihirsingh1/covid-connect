@@ -81,6 +81,7 @@ class Repository {
 
     if (isDeleted) {
       covidItems = covidItems.where((element) => element.id != id).toList();
+      allItems = allItems.where((element) => element.id != id).toList();
     }
 
     return isDeleted;

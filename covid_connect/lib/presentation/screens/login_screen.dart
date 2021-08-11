@@ -73,8 +73,12 @@ class LoginBody extends StatelessWidget {
             inputType: TextInputType.text,
           ),
           SizedBox(height: 10.0),
-          CustomTextField("Password", _passwordController,
-              inputType: TextInputType.text),
+          CustomTextField(
+            "Password",
+            _passwordController,
+            inputType: TextInputType.text,
+            isPassword: true,
+          ),
           InkWell(
             onTap: () {
               var username = _usernameController.text;
