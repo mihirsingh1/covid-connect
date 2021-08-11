@@ -36,15 +36,20 @@ class NetworkService {
           headers: jsonContentHeader, body: jsonEncode(body));
 
       final responseMap = jsonDecode(response.body);
+
       if (responseMap["isLoginSuccess"]) {
-        return LoginResponse(
-            username: responseMap["username"],
-            isSuccess: true,
-            authToken: responseMap["token"]);
+        final loginResponse = LoginResponse(
+          username: responseMap["username"],
+          isSuccess: true,
+          authToken: responseMap["token"],
+        );
+        print(loginResponse.isSuccess);
+        return loginResponse;
       }
 
       return LoginResponse(isSuccess: false, error: responseMap["error"]);
     } catch (err) {
+      print(err);
       return LoginResponse(isSuccess: false, error: "Something went wrong");
     }
   }

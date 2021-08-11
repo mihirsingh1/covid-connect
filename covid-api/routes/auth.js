@@ -41,7 +41,8 @@ Router.post("/signup", async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN)
     res.status(201).send({
       isLoginSuccess: true,
-      token
+      token,
+      username: req.body.username
     });
   } catch (err) {
     res.status(500).send( {
