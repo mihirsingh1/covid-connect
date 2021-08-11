@@ -2,6 +2,10 @@
 
 Connect those in need
 
+
+## Screenshots
+![](https://raw.githubusercontent.com/mihirsingh1/covid-connect/main/screenshots/Screenshot_1628649171.png)
+
 ## How to test?
 
 This project is built with Flutter, NodeJS and MongoDB. The testing machine will require the development environment for these set up.
