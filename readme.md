@@ -1,6 +1,6 @@
 # Covid Connect
 
-Some tagline
+Connect those in need
 
 ## How to test?
 
@@ -23,6 +23,4 @@ To start the app the following steps need to be followed:
 
 ## Features
 
-1. 
-
-2. This is a secure platform, it uses JWT Authentication and Password hashing to protect user data from being hacked
+1. This is a secure platform, it uses JWT Authentication and Password hashing to protect user data from being hacked
