@@ -4,7 +4,7 @@ Some tagline
 
 ## How to test?
 
-This project is built with Flutter, NodeJS and MongoDB. The testing machines will require these things set up.
+This project is built with Flutter, NodeJS and MongoDB. The testing machine will require the development environment for these set up.
 
 The server can be started by running:
 ```
